@@ -1,0 +1,29 @@
+/*Shared css*/
+
+html,
+body {
+height: 100%;
+margin: 0;
+}
+
+.headerBanner {
+    background: #c9f1fd;
+    color: #1c0c4f;
+    font-size: 60px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.footerBanner {
+    background: #c9f1fd;
+    color: #1c0c4f;
+    font-size: 12px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
