@@ -2,8 +2,12 @@
 
 html,
 body {
-height: 100%;
-margin: 0;
+    height: 100%;
+    margin: 0;
+    background-image: url("../images/background-transparent.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .headerBanner {
@@ -26,4 +30,8 @@ margin: 0;
     left: 0;
     bottom: 0;
     width: 100%;
+}
+
+.centerContent {
+    text-align: center;
 }

@@ -18,7 +18,7 @@ $(document).ready(function(){
 
   // On button click, we go to the next page
   $("#nextPageButton").click(function() {
-    window.location.href = "information/information.html";
+    window.location.href = "../meetCouple/meetCouple" + language + ".html";
   });
 });
 
