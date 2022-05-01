@@ -1,21 +1,19 @@
-/*Home Exclusive css*/
-.homeHeader {
-    color: #2e1572;
-    text-align: center;
-    font-size: 18px;
-}
-
-.selectionHeader {
-    color: #008db1;
-    text-align: center;
-    font-size: 48px;
-}
-
+/*Information Exclusive css*/
 .changePageContainer {
    display: flex;
    justify-content: space-between;
 }
 
-#doctorContainer {
-    margin-top: 48px;
+.informationContainer {
+    background-color: #d6e3fd;
+    border: black solid 1px;
+    margin-top: 32px;
+    margin-left: 48px;
+    margin-right: 48px;
+}
+
+.informationHeader {
+    color: #150547;
+    font-size: 24px;
+    text-align: center;
 }

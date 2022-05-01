@@ -1,13 +1,12 @@
 /*Shared css*/
-
 html,
 body {
+    background-image: url("../images/background-transparent.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     height: 100%;
     margin: 0;
-    background-image: url("../images/background-transparent.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 div {
@@ -29,30 +28,36 @@ p {
 }
 
 /*CSS Class*/
+.alignSelfCenter{
+    align-content: center !important;
+}
+
 .headerBanner {
     background: #c9f1fd;
+    border-bottom: #d4e3fc solid 5px;
     color: #1c0c4f;
     font-size: 60px;
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-    text-align: center;
     height: 10%;
     justify-content: center;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    text-align: center;
 }
 
 .footerBanner {
     background: #c9f1fd;
+    border-top: #d4e3fc solid 5px;
+    bottom: 0;
     color: #1c0c4f;
     font-size: 12px;
+    left: 0;
+    height: 5%;
+    justify-content: center;
     padding-bottom: 8px;
     padding-top: 8px;
     text-align: center;
     position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
-    height: 5%;
-    justify-content: center;
 }
 
 .centerContent {
@@ -68,9 +73,9 @@ p {
 }
 
 .flex-column {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .hidden {
@@ -78,8 +83,8 @@ p {
 }
 
 .page-content {
-    height: 75%;
-    flex-wrap: wrap;
     align-content: space-between;
+    flex-wrap: wrap;
+    height: 75%;
 }
 

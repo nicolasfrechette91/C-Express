@@ -12,24 +12,18 @@ $(document).ready(function(){
 
   }
 
-  //On select change, show more stuff
-  showDoctorSelector();
+  //We need to validate to see what we can show
   showNextPageButton();
 
-  // On button click, we go to the next page
+  // On button click, we go to the previous page
+  $("#previousPageButton").click(function() {
+    window.location.href = "../home.html";
+  });
+
   $("#nextPageButton").click(function() {
-    window.location.href = "information/information.html";
+    window.location.href = "../confirmation/confirmation.html";
   });
 });
-
-function showDoctorSelector() {
-  $("#specialitySelect").change(function() {
-    var val = $(this).val();
-    if(val === "gineco") {
-        $("#doctorContainer").removeClass('hidden');
-    }
-  });
-};
 
 function showNextPageButton() {
   $("#doctorSelect").change(function() {
