@@ -18,7 +18,7 @@ $(document).ready(function(){
 
   // On button click, we go to the next page
   $("#nextPageButton").click(function() {
-    window.location.href = "../meetCouple/meetCouple" + language + ".html";
+    window.location.href = "information/information.html";
   });
 });
 
@@ -26,7 +26,7 @@ function showDoctorSelector() {
   $("#specialitySelect").change(function() {
     var val = $(this).val();
     if(val === "gineco") {
-        $("#doctorContainer").show();
+        $("#doctorContainer").removeClass('hidden');
     }
   });
 };
@@ -35,7 +35,7 @@ function showNextPageButton() {
   $("#doctorSelect").change(function() {
     var val = $(this).val();
     if(val !== "") {
-        $("#nextPageContainer").show();
+        $("#nextPageContainer").removeClass('hidden');
     }
   });
 };

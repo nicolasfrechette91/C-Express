@@ -23,19 +23,29 @@ $(document).ready(function(){
 });
 
 function showDoctorSelector() {
+  let value = $("#specialitySelect").val();
+  if(value && value !== ''){
+    $("#doctorContainer").removeClass('hidden');
+  }
+
   $("#specialitySelect").change(function() {
     var val = $(this).val();
     if(val === "gineco") {
-        $("#doctorContainer").show();
+        $("#doctorContainer").removeClass('hidden');
     }
   });
 };
 
 function showNextPageButton() {
+  let value = $("#doctorSelect").val();
+  if(value && value !== ''){
+    $("#nextPageContainer").removeClass('hidden');
+  }
+
   $("#doctorSelect").change(function() {
     var val = $(this).val();
     if(val !== "") {
-        $("#nextPageContainer").show();
+        $("#nextPageContainer").removeClass('hidden');
     }
   });
 };

@@ -10,6 +10,25 @@ body {
     background-position: center;
 }
 
+div {
+    display: flex;
+    width: 100%;
+}
+
+p {
+    width: 100%;
+}
+
+/*CSS ID*/
+#previousPageButton {
+    margin-left: 48px;
+}
+
+#nextPageButton {
+    margin-right: 48px;
+}
+
+/*CSS Class*/
 .headerBanner {
     background: #c9f1fd;
     color: #1c0c4f;
@@ -17,6 +36,8 @@ body {
     padding-bottom: 16px;
     margin-bottom: 16px;
     text-align: center;
+    height: 10%;
+    justify-content: center;
 }
 
 .footerBanner {
@@ -30,8 +51,35 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 5%;
+    justify-content: center;
 }
 
 .centerContent {
+    justify-content: center;
+}
+
+.centerText {
     text-align: center;
 }
+
+.endContent {
+    justify-content: flex-end;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.page-content {
+    height: 75%;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+

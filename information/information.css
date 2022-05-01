@@ -10,3 +10,12 @@
     text-align: center;
     font-size: 48px;
 }
+
+.changePageContainer {
+   display: flex;
+   justify-content: space-between;
+}
+
+#doctorContainer {
+    margin-top: 48px;
+}
