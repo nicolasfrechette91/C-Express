@@ -2,18 +2,36 @@
 .changePageContainer {
    display: flex;
    justify-content: space-between;
+   margin-bottom: 72px;
 }
 
 .informationContainer {
     background-color: #d6e3fd;
     border: black solid 1px;
-    margin-top: 32px;
+    flex-direction: column;
+    margin-bottom: 32px;
     margin-left: 48px;
     margin-right: 48px;
+    margin-top: 32px;
 }
 
 .informationHeader {
     color: #150547;
     font-size: 24px;
     text-align: center;
+}
+
+.informationQuestionHeader {
+    color: #210a53;
+    font-size: 18px;
+    margin-left: 48px;
+    width: 50%;
+}
+
+.optionSelect {
+    width: 100px;
+}
+
+.questionContainer {
+    padding-bottom: 24px;
 }

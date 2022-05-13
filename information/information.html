@@ -15,6 +15,42 @@
                 <div>
                     <div class="informationContainer">
                         <p class="informationHeader">Favor de llenar la informacion necesaria</p>
+                        <div class="questionContainer">
+                            <p class="informationQuestionHeader">¿Eres paciente del doctor?</p>
+                            <select id="isPatientSelect" class="optionSelect">
+                                <option value="" disabled selected hidden>Select</option>
+                                <option value="Yes" class="centerText">S&iacute;</option>
+                                <option value="No" class="centerText">No</option>
+                            </select>
+                        </div>
+                        <div class="questionContainer">
+                            <p class="informationQuestionHeader">Nombre</p>
+                            <input class="inputText" type="text" id="patientName" name="patientName">
+                        </div>
+                        <div class="questionContainer">
+                            <p class="informationQuestionHeader">Fecha de nacimiento</p>
+                            <input type="date" id="patientBirthday" name="patientBirthday">
+                        </div>
+                        <div class="questionContainer">
+                            <p class="informationQuestionHeader">Correo electrónico</p>
+                            <input class="inputText" type="text" id="patientEmail" name="patientEmail">
+                        </div>
+                        <div class="questionContainer">
+                            <p class="informationQuestionHeader">Número de teléfono</p>
+                            <input class="inputText" type="text" id="patientPhone" name="patientPhone">
+                        </div>
+                        <div class="questionContainer">
+                            <p class="informationQuestionHeader">¿Estas actualmente embarazada?</p>
+                            <select id="isPregnantSelect" class="optionSelect">
+                                <option value="" disabled selected hidden>Select</option>
+                                <option value="Yes" class="centerText">S&iacute;</option>
+                                <option value="No" class="centerText">No</option>
+                            </select>
+                        </div>
+                        <div class="questionContainer">
+                            <p class="informationQuestionHeader">¿Cuantas semanas de embarazo?</p>
+                            <input type="number" id="quantity" name="quantity" min="1" max="40">
+                        </div>
                     </div>
                 </div>
             </div>
