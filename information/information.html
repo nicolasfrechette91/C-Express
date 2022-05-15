@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="page-content">
-            <div class="flex-column">
+            <div id="informationStep1" class="flex-column">
                 <div>
                     <div class="informationContainer">
                         <p class="informationHeader">Favor de llenar la informacion necesaria</p>
@@ -56,9 +56,35 @@
             </div>
 
 
+            <div id="informationStep2" class="flex-column hidden">
+                <div>
+                    <div class="informationContainer">
+                        <p class="informationHeader">Favor de llenar la informacion necesaria</p>
+                        <div class="questionContainer">
+                            <p class="informationQuestionHeader">¿Cuando es tu proxima cita?</p>
+                            <input type="date" id="patientNextAppointment" name="patientBirthday">
+                        </div>
+                        <div class="questionContainer">
+                            <p class="informationQuestionHeader">¿Que sintomas presentas?</p>
+                            <textarea id="symptoms" name="symptoms" rows="4" cols="50"></textarea>
+                        </div>
+                        <div class="questionContainer">
+                            <p class="informationQuestionHeader">¿Has tomado algun medicamento?<br>¿Cual y a que hora?</p>
+                            <textarea id="takenMeds" name="takenMeds" rows="4" cols="50"></textarea>
+                        </div>
+                        <div class="questionContainer">
+                            <p class="informationQuestionHeader">¿Que cambios notaste despues del medicamento?</p>
+                            <textarea id="changes" name="changes" rows="4" cols="50"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="changePageContainer">
                 <button id="previousPageButton">Atr&aacute;s</button>
-                <button id="nextPageButton">Siguiente</button>
+                <button id="previousStepButton" class="hidden">Atr&aacute;s</button>
+                <button id="nextStepButton">Siguiente</button>
+                <button id="nextPageButton" class="hidden">Guardar</button>
             </div>
         </div>
     </body>

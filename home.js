@@ -6,6 +6,8 @@ $(document).ready(function(){
     isMobile = true;
   }
 
+  $('.dropdown-toggle').dropdown();
+
   if(isMobile){
 
   } else {
@@ -15,6 +17,23 @@ $(document).ready(function(){
   //On select change, show more stuff
   showDoctorSelector();
   showNextPageButton();
+
+  $(".dropdown-menu.specialty a").click(function(){
+    $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+    $(this).parents(".dropdown").find('.btn').val($(this).text());
+    if($(this).text() === 'ginecólogo'){
+        $("#doctorContainer").removeClass('hidden');
+        document.querySelector('#specialitySelect').value = $(this).text();
+    }
+  });
+
+  $(".dropdown-menu.doctor a").click(function(){
+    $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+    $(this).parents(".dropdown").find('.btn').val($(this).text());
+    if($(this).text() !== "") {
+        $("#nextPageContainer").removeClass('hidden');
+    }
+  });
 
   // On button click, we go to the next page
   $("#nextPageButton").click(function() {
@@ -27,13 +46,6 @@ function showDoctorSelector() {
   if(value && value !== ''){
     $("#doctorContainer").removeClass('hidden');
   }
-
-  $("#specialitySelect").change(function() {
-    var val = $(this).val();
-    if(val === "gineco") {
-        $("#doctorContainer").removeClass('hidden');
-    }
-  });
 };
 
 function showNextPageButton() {
@@ -41,11 +53,4 @@ function showNextPageButton() {
   if(value && value !== ''){
     $("#nextPageContainer").removeClass('hidden');
   }
-
-  $("#doctorSelect").change(function() {
-    var val = $(this).val();
-    if(val !== "") {
-        $("#nextPageContainer").removeClass('hidden');
-    }
-  });
 };

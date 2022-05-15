@@ -23,6 +23,26 @@ $(document).ready(function(){
   $("#nextPageButton").click(function() {
     window.location.href = "../confirmation/confirmation.html";
   });
+
+  // First we validate and if it's okay, the user can go to the second step page
+  $("#nextStepButton").click(function() {
+    //TODO add validation
+    $('#informationStep1').addClass('hidden');
+    $('#informationStep2').removeClass('hidden');
+    $('#nextStepButton').addClass('hidden');
+    $("#nextPageButton").removeClass('hidden');
+    $('#previousPageButton').addClass('hidden');
+    $("#previousStepButton").removeClass('hidden');
+  });
+
+  $("#previousStepButton").click(function() {
+    $('#informationStep1').removeClass('hidden');
+    $('#informationStep2').addClass('hidden');
+    $("#nextStepButton").removeClass('hidden');
+    $("#nextPageButton").addClass('hidden');
+    $('#previousPageButton').removeClass('hidden');
+    $("#previousStepButton").addClass('hidden');
+  });
 });
 
 function showNextPageButton() {

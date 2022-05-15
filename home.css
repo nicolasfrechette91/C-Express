@@ -6,6 +6,11 @@
     text-align: center;
 }
 
+.homeNext {
+    margin-right: 0px !important;
+    margin-top: 72px;
+}
+
 .selectionHeader {
     color: #008db1;
     font-size: 48px;

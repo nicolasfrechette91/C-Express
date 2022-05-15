@@ -2,41 +2,50 @@
 <html>
     <head>
         <title>C-Express</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="shared/images/favicon.png"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <link rel="stylesheet" href="shared/css/shared.css">
         <link rel="stylesheet" href="home.css">
         <script src="shared/jquery/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <script src="shared/headerFooter.js"></script>
         <script src="home.js"></script>
     </head>
     <body>
-    <div class="page-content">
+      <div class="page-content">
         <div class="flex-column">
             <p class="homeHeader">C-Express es un espacio dise&ntilde;ado para hacer las consultas medicas mas eficientes y en la comodidad de tu casa.</p>
 
             <p class="selectionHeader">Selecciona a tu doctor</p>
 
-            <div class="centerContent">
-                <select id="specialitySelect">
-                    <option value="" disabled selected hidden>Selecciona la especialidad</option>
-                    <option value="gineco" class="centerText">ginec&oacute;logo</option>
-                </select>
+            <div class="dropdown centerContent">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownSpeciality" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Selecciona la especialidad
+                </button>
+                <div class="dropdown-menu specialty" aria-labelledby="dropdownSpeciality">
+                    <li><a class="dropdown-item" href="#">ginec&oacute;logo</a></li>
+                </div>
             </div>
 
-
-            <div id="doctorContainer" class="centerContent hidden">
-                <select id="doctorSelect">
-                    <option value="" disabled selected hidden>Selecciona a tu doctor</option>
-                    <option value="david" class="centerText">David Marin Sierra</option>
-                </select>
+            <div id="doctorContainer" class="dropdown centerContent hidden">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownDoctor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Selecciona a tu doctor
+                </button>
+                <div class="dropdown-menu doctor" aria-labelledby="dropdownDoctor">
+                    <a class="dropdown-item" href="#">David Marin Sierra</a>
+                </div>
             </div>
-
         </div>
 
+        <input type='hidden' id='specialitySelect' value='' />
+        <input type='hidden' id='doctorSelect' value='' />
 
-        <div id="nextPageContainer" class="hidden endContent">
-            <button id="nextPageButton">Siguiente</button>
+        <div id="nextPageContainer" class="hidden centerContent">
+            <button id="nextPageButton" class="homeNext btn btn-primary">Siguiente</button>
         </div>
     </div>
+<!--      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>-->
     </body>
 </html>
