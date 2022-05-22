@@ -11,6 +11,10 @@
     margin-top: 72px;
 }
 
+.selectAutoWidth {
+    width: auto;
+}
+
 .selectionHeader {
     color: #008db1;
     font-size: 48px;
