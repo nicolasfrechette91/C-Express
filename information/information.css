@@ -37,6 +37,4 @@
     display: flex;
 }
 
-.selectButtonHeader {
-    margin-right: -12px;
-}
+select:invalid { color: #636c72; }

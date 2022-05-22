@@ -12,6 +12,8 @@ $(document).ready(function(){
 
   }
 
+  $("#patientBirthday").addClass('birthday')
+
   //We need to validate to see what we can show
   showNextPageButton();
 
@@ -24,41 +26,11 @@ $(document).ready(function(){
     window.location.href = "../confirmation/confirmation.html";
   });
 
-  $(".dropdown-menu.isPatientSelect a").click(function(){
-      $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
-      $(this).parents(".dropdown").find('.btn').val($(this).text());
-      if($(this).text()){
-          document.querySelector('#isPatientSelect').value = $(this).text();
-      }
-  });
-
-  $(".dropdown-menu.isPregnantSelect a").click(function(){
-      $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
-      $(this).parents(".dropdown").find('.btn').val($(this).text());
-      if($(this).text()){
-          document.querySelector('#isPregnantSelect').value = $(this).text();
-      }
-  });
-
   // First we validate and if it's okay, the user can go to the second step page
-  $("#nextStepButton").click(function() {
-    //TODO add validation
-    $('#informationStep1').addClass('hidden');
-    $('#informationStep2').removeClass('hidden');
-    $('#nextStepButton').addClass('hidden');
-    $("#nextPageButton").removeClass('hidden');
-    $('#previousPageButton').addClass('hidden');
-    $("#previousStepButton").removeClass('hidden');
-  });
+  step1NextClicked();
 
-  $("#previousStepButton").click(function() {
-    $('#informationStep1').removeClass('hidden');
-    $('#informationStep2').addClass('hidden');
-    $("#nextStepButton").removeClass('hidden');
-    $("#nextPageButton").addClass('hidden');
-    $('#previousPageButton').removeClass('hidden');
-    $("#previousStepButton").addClass('hidden');
-  });
+  step2PreviousClicked();
+
 });
 
 function showNextPageButton() {
@@ -69,3 +41,44 @@ function showNextPageButton() {
     }
   });
 };
+
+function step1NextClicked(){
+  $("#nextStepButton").click(function() {
+    if(validateStep1()){
+        $('#informationStep1').addClass('hidden');
+        $('#informationStep2').removeClass('hidden');
+        $('#nextStepButton').addClass('hidden');
+        $("#nextPageButton").removeClass('hidden');
+        $('#previousPageButton').addClass('hidden');
+        $("#previousStepButton").removeClass('hidden');
+    }
+  });
+}
+
+function step2PreviousClicked(){
+    $("#previousStepButton").click(function() {
+      $('#informationStep1').removeClass('hidden');
+      $('#informationStep2').addClass('hidden');
+      $("#nextStepButton").removeClass('hidden');
+      $("#nextPageButton").addClass('hidden');
+      $('#previousPageButton').removeClass('hidden');
+      $("#previousStepButton").addClass('hidden');
+    });
+}
+
+function validateStep1(){
+    let valid = true;
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('#step1Form')
+
+    // Loop over them and prevent submission
+    forms.forEach(function (form) {
+        if (!form.checkValidity()) {
+            valid = false;
+        }
+
+        form.classList.add('was-validated')
+    })
+    return valid;
+}

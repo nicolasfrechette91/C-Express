@@ -13,6 +13,10 @@ div {
     width: 100%;
 }
 
+form {
+    width: 100%;
+}
+
 li {
     cursor: pointer;
 }
