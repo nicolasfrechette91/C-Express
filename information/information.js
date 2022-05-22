@@ -12,10 +12,12 @@ $(document).ready(function(){
 
   }
 
-  $("#patientBirthday").addClass('birthday')
-
-  //We need to validate to see what we can show
-  showNextPageButton();
+  $("form").submit(function(e){
+    if(!validateStep2()){
+        e.preventDefault();
+        event.stopPropagation();
+    }
+  });
 
   // On button click, we go to the previous page
   $("#previousPageButton").click(function() {
@@ -23,7 +25,7 @@ $(document).ready(function(){
   });
 
   $("#nextPageButton").click(function() {
-    window.location.href = "../confirmation/confirmation.html";
+
   });
 
   // First we validate and if it's okay, the user can go to the second step page
@@ -32,15 +34,6 @@ $(document).ready(function(){
   step2PreviousClicked();
 
 });
-
-function showNextPageButton() {
-  $("#doctorSelect").change(function() {
-    var val = $(this).val();
-    if(val !== "") {
-        $("#nextPageContainer").removeClass('hidden');
-    }
-  });
-};
 
 function step1NextClicked(){
   $("#nextStepButton").click(function() {
@@ -80,5 +73,22 @@ function validateStep1(){
 
         form.classList.add('was-validated')
     })
+    return valid;
+}
+
+function validateStep2(){
+    let valid = true;
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('#step2Form')
+
+    // Loop over them and prevent submission
+    forms.forEach(function (form) {
+        if (!form.checkValidity()) {
+           valid = false;
+        }
+
+        form.classList.add('was-validated')
+    });
     return valid;
 }

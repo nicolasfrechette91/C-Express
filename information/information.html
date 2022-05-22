@@ -102,26 +102,40 @@
                 </div>
             </form>
 
-            <form id="step2Form" class="row g-3 needs-validation" novalidate>
+            <form id="step2Form" class="row g-3 needs-validation" action="../confirmation/confirmation.html" novalidate>
                 <div id="informationStep2" class="flex-column flex hidden">
                     <div class="flex">
                         <div class="informationContainer">
                             <p class="informationHeader">Favor de llenar la informacion necesaria</p>
                             <div class="questionContainer">
                                 <p class="informationQuestionHeader">¿Cuando es tu proxima cita?</p>
-                                <input placeholder="yyyy-mm-dd" class="form-control" type="text" onfocus="(this.type='date')" id="patientNextAppointment">
+                                <div>
+                                    <input placeholder="yyyy-mm-dd" class="form-control" type="text" onfocus="(this.type='date')" id="patientNextAppointment" required>
+                                    <div class="invalid-feedback">
+                                        Introduzca su proxima cita.
+                                    </div>
+                                </div>
                             </div>
+
                             <div class="questionContainer">
                                 <p class="informationQuestionHeader">¿Que sintomas presentas?</p>
-                                <textarea id="symptoms" class="form-control"  rows="4"></textarea>
+                                <div>
+                                    <textarea id="symptoms" class="form-control"  rows="4"></textarea>
+                                </div>
                             </div>
+
                             <div class="questionContainer">
                                 <p class="informationQuestionHeader">¿Has tomado algun medicamento?<br>¿Cual y a que hora?</p>
-                                <textarea id="takenMeds" class="form-control"  rows="4"></textarea>
+                                <div>
+                                    <textarea id="takenMeds" class="form-control"  rows="4"></textarea>
+                                </div>
                             </div>
+
                             <div class="questionContainer">
                                 <p class="informationQuestionHeader">¿Que cambios notaste despues del medicamento?</p>
-                                <textarea id="changes" class="form-control"  rows="4"></textarea>
+                                <div>
+                                    <textarea id="changes" class="form-control"  rows="4"></textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
