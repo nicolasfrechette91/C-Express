@@ -20,7 +20,7 @@
 
             <p class="selectionHeader">Selecciona a tu doctor</p>
 
-            <div class="dropdown centerContent">
+            <div class="dropdown centerContent flex">
                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownSpeciality" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Selecciona la especialidad
                 </button>
@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <div id="doctorContainer" class="dropdown centerContent hidden">
+            <div id="doctorContainer" class="dropdown centerContent flex hidden">
                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownDoctor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Selecciona a tu doctor
                 </button>
@@ -42,10 +42,9 @@
         <input type='hidden' id='specialitySelect' value='' />
         <input type='hidden' id='doctorSelect' value='' />
 
-        <div id="nextPageContainer" class="hidden centerContent">
+        <div id="nextPageContainer" class="hidden centerContent flex">
             <button id="nextPageButton" class="homeNext btn btn-primary">Siguiente</button>
         </div>
-    </div>
-<!--      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>-->
+      </div>
     </body>
 </html>

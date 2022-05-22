@@ -10,7 +10,6 @@ body {
 }
 
 div {
-    display: flex;
     width: 100%;
 }
 
@@ -44,21 +43,34 @@ p {
     align-content: center !important;
 }
 
+.centerContent {
+    justify-content: center;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.centerContent {
+    justify-content: center;
+}
+
 .dropdown-menu.show {
     width: auto;
 }
 
-.headerBanner {
-    align-items: flex-end;
-    background: #c9f1fd;
-    border-bottom: #d4e3fc solid 5px;
-    color: #1c0c4f;
-    font-size: 60px;
-    height: 10%;
-    justify-content: center;
-    padding-bottom: 8px;
-    padding-top: 8px;
-    text-align: center;
+.endContent {
+    justify-content: flex-end;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
 }
 
 .footerBanner {
@@ -78,26 +90,17 @@ p {
     width: 100%;
 }
 
-.centerContent {
+.headerBanner {
+    align-items: flex-end;
+    background: #c9f1fd;
+    border-bottom: #d4e3fc solid 5px;
+    color: #1c0c4f;
+    font-size: 60px;
+    height: 10%;
     justify-content: center;
-}
-
-.centerText {
+    padding-bottom: 8px;
+    padding-top: 8px;
     text-align: center;
-}
-
-.centerContent {
-    justify-content: center;
-}
-
-.endContent {
-    justify-content: flex-end;
-}
-
-.flex-column {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
 }
 
 .hidden {

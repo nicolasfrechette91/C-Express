@@ -24,6 +24,22 @@ $(document).ready(function(){
     window.location.href = "../confirmation/confirmation.html";
   });
 
+  $(".dropdown-menu.isPatientSelect a").click(function(){
+      $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+      $(this).parents(".dropdown").find('.btn').val($(this).text());
+      if($(this).text()){
+          document.querySelector('#isPatientSelect').value = $(this).text();
+      }
+  });
+
+  $(".dropdown-menu.isPregnantSelect a").click(function(){
+      $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+      $(this).parents(".dropdown").find('.btn').val($(this).text());
+      if($(this).text()){
+          document.querySelector('#isPregnantSelect').value = $(this).text();
+      }
+  });
+
   // First we validate and if it's okay, the user can go to the second step page
   $("#nextStepButton").click(function() {
     //TODO add validation

@@ -2,89 +2,104 @@
 <html>
     <head>
         <title>C-Express</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="../shared/images/favicon.png"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <link rel="stylesheet" href="../shared/css/shared.css">
         <link rel="stylesheet" href="information.css">
         <script src="../shared/jquery/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <script src="../shared/headerFooter.js"></script>
         <script src="information.js"></script>
     </head>
     <body>
         <div class="page-content">
-            <div id="informationStep1" class="flex-column">
-                <div>
+            <div id="informationStep1" class="flex-column flex">
+                <div class="flex">
                     <div class="informationContainer">
                         <p class="informationHeader">Favor de llenar la informacion necesaria</p>
                         <div class="questionContainer">
-                            <p class="informationQuestionHeader">¿Eres paciente del doctor?</p>
-                            <select id="isPatientSelect" class="optionSelect">
-                                <option value="" disabled selected hidden>Select</option>
-                                <option value="Yes" class="centerText">S&iacute;</option>
-                                <option value="No" class="centerText">No</option>
-                            </select>
+                            <p class="informationQuestionHeader selectButtonHeader">¿Eres paciente del doctor?</p>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownIsPatientSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Selecciona
+                                </button>
+                                <div class="dropdown-menu isPatientSelect" aria-labelledby="dropdownIsPatientSelect">
+                                    <li><a class="dropdown-item" href="#">S&iacute;</a></li>
+                                    <li><a class="dropdown-item" href="#">No</a></li>
+                                </div>
+                            </div>
                         </div>
                         <div class="questionContainer">
                             <p class="informationQuestionHeader">Nombre</p>
-                            <input class="inputText" type="text" id="patientName" name="patientName">
+                            <input type="text" class="form-control" id="patientName" aria-describedby="patientNameHelp" placeholder="Nombre completo">
                         </div>
                         <div class="questionContainer">
                             <p class="informationQuestionHeader">Fecha de nacimiento</p>
-                            <input type="date" id="patientBirthday" name="patientBirthday">
+                            <input placeholder="yyyy-mm-dd" class="form-control" type="text" onfocus="(this.type='date')" id="patientBirthday">
                         </div>
                         <div class="questionContainer">
                             <p class="informationQuestionHeader">Correo electrónico</p>
-                            <input class="inputText" type="text" id="patientEmail" name="patientEmail">
+                            <input type="email" class="form-control" id="patientEmail" aria-describedby="emailHelp" placeholder="Ingrese correo electr&oacute;nico">
                         </div>
                         <div class="questionContainer">
                             <p class="informationQuestionHeader">Número de teléfono</p>
-                            <input class="inputText" type="text" id="patientPhone" name="patientPhone">
+                            <input type="tel" id="patientPhone" class="form-control" placeholder="ej. 449-111-1111"/>
                         </div>
                         <div class="questionContainer">
-                            <p class="informationQuestionHeader">¿Estas actualmente embarazada?</p>
-                            <select id="isPregnantSelect" class="optionSelect">
-                                <option value="" disabled selected hidden>Select</option>
-                                <option value="Yes" class="centerText">S&iacute;</option>
-                                <option value="No" class="centerText">No</option>
-                            </select>
+                            <p class="informationQuestionHeader selectButtonHeader">¿Estas actualmente embarazada?</p>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownIsPregnantSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Selecciona
+                                </button>
+                                <div class="dropdown-menu isPregnantSelect" aria-labelledby="dropdownIsPregnantSelect">
+                                    <li><a class="dropdown-item" href="#">S&iacute;</a></li>
+                                    <li><a class="dropdown-item" href="#">No</a></li>
+                                </div>
+                            </div>
                         </div>
                         <div class="questionContainer">
                             <p class="informationQuestionHeader">¿Cuantas semanas de embarazo?</p>
-                            <input type="number" id="quantity" name="quantity" min="1" max="40">
+                            <input type="number" id="quantity" class="form-control" min="1" max="40" placeholder="ej. 10" />
                         </div>
                     </div>
                 </div>
             </div>
 
 
-            <div id="informationStep2" class="flex-column hidden">
-                <div>
+            <div id="informationStep2" class="flex-column flex hidden">
+                <div class="flex">
                     <div class="informationContainer">
                         <p class="informationHeader">Favor de llenar la informacion necesaria</p>
                         <div class="questionContainer">
                             <p class="informationQuestionHeader">¿Cuando es tu proxima cita?</p>
-                            <input type="date" id="patientNextAppointment" name="patientBirthday">
+                            <input placeholder="yyyy-mm-dd" class="form-control" type="text" onfocus="(this.type='date')" id="patientNextAppointment">
                         </div>
                         <div class="questionContainer">
                             <p class="informationQuestionHeader">¿Que sintomas presentas?</p>
-                            <textarea id="symptoms" name="symptoms" rows="4" cols="50"></textarea>
+                            <textarea id="symptoms" class="form-control"  rows="4"></textarea>
                         </div>
                         <div class="questionContainer">
                             <p class="informationQuestionHeader">¿Has tomado algun medicamento?<br>¿Cual y a que hora?</p>
-                            <textarea id="takenMeds" name="takenMeds" rows="4" cols="50"></textarea>
+                            <textarea id="takenMeds" class="form-control"  rows="4"></textarea>
                         </div>
                         <div class="questionContainer">
                             <p class="informationQuestionHeader">¿Que cambios notaste despues del medicamento?</p>
-                            <textarea id="changes" name="changes" rows="4" cols="50"></textarea>
+                            <textarea id="changes" class="form-control"  rows="4"></textarea>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <input type='hidden' id='isPatientSelect' value='' />
+            <input type='hidden' id='isPregnantSelect' value='' />
+
             <div class="changePageContainer">
-                <button id="previousPageButton">Atr&aacute;s</button>
-                <button id="previousStepButton" class="hidden">Atr&aacute;s</button>
-                <button id="nextStepButton">Siguiente</button>
-                <button id="nextPageButton" class="hidden">Guardar</button>
+                <button id="previousPageButton" class="btn btn-primary">Atr&aacute;s</button>
+                <button id="previousStepButton" class="hidden btn btn-primary">Atr&aacute;s</button>
+                <button id="nextStepButton" class="btn btn-primary">Siguiente</button>
+                <button id="nextPageButton" class="hidden btn btn-primary">Guardar</button>
             </div>
         </div>
     </body>
