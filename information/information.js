@@ -13,7 +13,7 @@ $(document).ready(function(){
   }
 
   $("form").submit(function(e){
-    if(!validateStep2()){
+    if(!validateStep2() && captchaValidation()){
         e.preventDefault();
         event.stopPropagation();
     }
@@ -68,7 +68,7 @@ function validateStep1(){
     // Loop over them and prevent submission
     forms.forEach(function (form) {
         if (!form.checkValidity()) {
-            valid = false;
+           // valid = false;
         }
 
         form.classList.add('was-validated')
@@ -91,4 +91,14 @@ function validateStep2(){
         form.classList.add('was-validated')
     });
     return valid;
+}
+
+function captchaValidation(){
+    var googleResponse = jQuery('#g-recaptcha-response').val();
+    if (!googleResponse) {
+        $('<p style="color:red !important" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please fill up the captcha.</p>" ').insertAfter("#html_element");
+        return false;
+    } else {
+        return true;
+    }
 }
