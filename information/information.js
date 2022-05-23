@@ -12,20 +12,15 @@ $(document).ready(function(){
 
   }
 
-  $("form").submit(function(e){
-    if(!validateStep2() && !captchaValidation()){
-        e.preventDefault();
-        event.stopPropagation();
-    }
-  });
-
   // On button click, we go to the previous page
   $("#previousPageButton").click(function() {
     window.location.href = "../home.html";
   });
 
   $("#nextPageButton").click(function() {
-
+    if(!captchaValidation() && !validateStep2()){
+        window.location.href = "../confirmation/confirmation.html";
+     }
   });
 
   // First we validate and if it's okay, the user can go to the second step page
