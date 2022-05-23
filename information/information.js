@@ -94,11 +94,21 @@ function validateStep2(){
 }
 
 function captchaValidation(){
+    if(grecaptcha.getResponse() == "") {
+   // e.preventDefault();
+    alert("You can't proceed!");
+  } else {
+    alert("Thank you");
+  }
+
     var googleResponse = jQuery('#g-recaptcha-response').val();
+    console.log(googleResponse)
     if (!googleResponse) {
         $('<p style="color:red !important" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please fill up the captcha.</p>" ').insertAfter("#html_element");
         return false;
     } else {
         return true;
     }
+
+
 }
