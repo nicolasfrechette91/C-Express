@@ -18,7 +18,7 @@ $(document).ready(function(){
   });
 
   $("#nextPageButton").click(function() {
-    if(captchaValidation() && validateStep2()){
+    if(validateStep2() && captchaValidation()){
         window.location.href = "../confirmation/confirmation.html";
      }
   });
@@ -90,10 +90,11 @@ function validateStep2(){
 
 function captchaValidation(){
     if(grecaptcha.getResponse() == "") {
-        $('<p style="color:red !important" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please fill up the captcha.</p>" ').insertAfter("#captchaCheckup");
+        if($('.error-captcha').length === 0){
+         $('<p style="color:red !important; text-align: center;" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please fill up the captcha.</p>" ').insertAfter("#captchaCheckup");
+        }
         return false;
     } else {
-        alert("Thank you");
         return true;
     }
 }
