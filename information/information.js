@@ -13,7 +13,7 @@ $(document).ready(function(){
   }
 
   $("form").submit(function(e){
-    if(!validateStep2() && captchaValidation()){
+    if(!validateStep2() && !captchaValidation()){
         e.preventDefault();
         event.stopPropagation();
     }
