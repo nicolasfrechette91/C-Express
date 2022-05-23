@@ -91,7 +91,7 @@ function validateStep2(){
 function captchaValidation(){
     if(grecaptcha.getResponse() == "") {
         if($('.error-captcha').length === 0){
-         $('<p style="color:red !important; text-align: center;" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please fill up the captcha.</p>" ').insertAfter("#captchaCheckup");
+         $('<p style="color:red !important; text-align: center;" class="error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please fill up the captcha.</p>" ').insertAfter("#captchaCheckup");
         }
         return false;
     } else {
