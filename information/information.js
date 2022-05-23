@@ -63,7 +63,7 @@ function validateStep1(){
     // Loop over them and prevent submission
     forms.forEach(function (form) {
         if (!form.checkValidity()) {
-           // valid = false;
+            valid = false;
         }
 
         form.classList.add('was-validated')
