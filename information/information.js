@@ -18,7 +18,7 @@ $(document).ready(function(){
   });
 
   $("#nextPageButton").click(function() {
-    if(!captchaValidation() && !validateStep2()){
+    if(captchaValidation() && validateStep2()){
         window.location.href = "../confirmation/confirmation.html";
      }
   });
